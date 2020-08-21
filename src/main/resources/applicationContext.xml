@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--装配userDao Bean-->
+    <bean id="userDao" class="cn.nci.pojo.impl.UserDaoImpl"></bean>
+
+    <!--装配userService Bean,带有userDao属性-->
+    <bean id="userService" class="cn.nci.service.UserService">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+</beans>
